@@ -38,11 +38,10 @@ function update(req, res) {
 }
 
 function create(req, res) {
-    const bodyTask = req.body;
-    console.log(req.body)
-    task.create(bodyTask).then(
+    task.create(req.body).then(
         data => {
-            res.json(data);
+            req.body._id = data._id;
+            res.json(req.body);
         },
         err => {
             res.json(err);

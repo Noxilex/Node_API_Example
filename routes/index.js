@@ -12,4 +12,4 @@ app.get('/register', controllers.register)
 //Routes
 //Ex: blog.js contains our blog routes -> require('./blog')
 require('./todo');
-require('./birds');
+//require('./birds');
