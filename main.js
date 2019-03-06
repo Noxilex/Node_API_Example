@@ -6,7 +6,7 @@ const auth = require('./middlewares/auth-token-query')
 // Database
 mongoose = require('mongoose')
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost:27017/aston', {
+mongoose.connect('mongodb://localhost:27017/local', {
     useNewUrlParser: true
 })
 
