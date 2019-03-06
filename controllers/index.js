@@ -3,6 +3,16 @@
  */
 exports.home = (req, res) => {
     res.json({
-        message: 'API Microservice'
+        message: 'Home page'
     })
+}
+
+exports.login = (req, res) => {
+    res.json({
+        message: 'Login page'
+    })
+}
+
+exports.register = (req, res) => {
+    res.sendFile()
 }
