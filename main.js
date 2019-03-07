@@ -2,11 +2,19 @@ const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const auth = require('./middlewares/auth-token-query')
+const config = require('./config.json')
+
+// Utils
+jsonUtils = require('./utils/json')
+logger = require('./utils/logger')
+password = require('./utils/password')
 
 // Database
 mongoose = require('mongoose')
+require('mongoose-type-email')
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://noxilex.ovh:27017/aston', {
+const dbUrl = `mongodb://${config.dbDomain}:${config.dbPort}/${config.dbTable}`;
+mongoose.connect(dbUrl, {
     useNewUrlParser: true
 })
 

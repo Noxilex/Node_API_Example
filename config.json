@@ -1,0 +1,5 @@
+{
+    "dbDomain" : "noxilex.ovh",
+    "dbPort" : 27017,
+    "dbTable" : "aston"
+}

@@ -6,10 +6,14 @@
 const controllers = require('../controllers')
 
 app.get('/', controllers.home)
-app.get('/login', controllers.login)
-app.get('/register', controllers.register)
+app.post('/login', controllers.login)
+app.post('/register', controllers.register)
 
 //Routes
 //Ex: blog.js contains our blog routes -> require('./blog')
 require('./todo');
 //require('./birds');
+
+app.use((req, res) => {
+    res.sendStatus('404');
+})

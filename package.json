@@ -11,13 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.17",
-    "morgan": "^1.9.1"
+    "mongoose-type-email": "^1.0.10",
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@types/node": "^11.10.5",
     "nodemon": "^1.18.10"
   }
 }

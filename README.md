@@ -21,5 +21,13 @@ Ejs - https://www.ejs.co/
 
 ### Useful
 
-If there is a file index.js in a folder, it while use it as default
+- If there is a file index.js in a folder, it while use it as default
 `const controllers = require('../controllers')`
+
+- **How do you know which collection is used by the API ?**
+`var schema = new mongoose.Schema({ name: 'string', size: 'string' });
+var Tank = mongoose.model('Tank', schema);`
+The first argument is the **singular name (collection 'tasks' -> 'Task')** of the collection your model is for. Mongoose automatically looks for the plural, lowercased version of your model name. Thus, for the example above, the model Tank is for the tanks collection in the database. **!mongoose specific!**
+
+- **Winston log doc**
+https://www.npmjs.com/package/winston#logging-levels

@@ -1,13 +1,12 @@
 const schema = require('../schemas/task')
 
-const Task = mongoose.model('Task', schema.task)
+const Task = mongoose.model('Task', schema)
 
 exports.findById = findById;
 exports.find = find;
 exports.remove = remove;
 exports.create = create;
 exports.update = update;
-exports.Task = Task;
 
 function findById(id) {
     return Task.findById(id);
@@ -18,7 +17,7 @@ function find(){
 }
 
 function remove(id){
-    return Task.findOneAndDelete({_id: id});
+    return Task.findByIdAndDelete(id);
 }
 
 function create(data){
@@ -26,5 +25,5 @@ function create(data){
 }
 
 function update(task){
-    return Task.findOneAndUpdate({_id: task._id}, task);
+    return Task.findByIdAndUpdate(task._id, task);
 }
