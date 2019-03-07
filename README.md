@@ -31,3 +31,8 @@ The first argument is the **singular name (collection 'tasks' -> 'Task')** of th
 
 - **Winston log doc**
 https://www.npmjs.com/package/winston#logging-levels
+
+- **Prank**
+```bash
+npm run dev & sleep 5; kill `ps | grep node | tr -s " " | tr " " ";" | cut -d \;  -f 2` `
+```

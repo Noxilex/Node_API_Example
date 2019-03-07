@@ -13,6 +13,9 @@ exports.home = (req, res) => {
 exports.login = (req, res) => {
     user.authenticate(req.body).then(
         success => {
+            jwtUtils.generateToken(u, (err, token) => {
+                console.log(token)
+            })
             jsonUtils.send(res, 200, {message: 'ok'})
         },
         error => {

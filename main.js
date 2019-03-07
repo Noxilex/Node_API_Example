@@ -8,6 +8,7 @@ const config = require('./config.json')
 jsonUtils = require('./utils/json')
 logger = require('./utils/logger')
 password = require('./utils/password')
+jwtUtils = require('./utils/jwt')
 
 // Database
 mongoose = require('mongoose')
