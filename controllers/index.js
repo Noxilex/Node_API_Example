@@ -12,13 +12,21 @@ exports.home = (req, res) => {
 
 exports.login = (req, res) => {
     user.authenticate(req.body).then(
-        success => {
+        u => {
+            u.password = '';
+
             jwtUtils.generateToken(u, (err, token) => {
-                console.log(token)
-            })
-            jsonUtils.send(res, 200, {message: 'ok'})
+                res.cookie('token', token, {
+                    path: '/',
+                    maxAge: 1000 * 60,
+                    httpOnly: true, 
+                    secure: false
+                });
+                jsonUtils.send(res, 200, u);
+            });
         },
         error => {
+            logger.error(err);
             jsonUtils.send(res, 401, {message: 'Authentication failed'})
         }
     )
